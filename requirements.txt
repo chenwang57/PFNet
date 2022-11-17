@@ -1,0 +1,4 @@
+TensorFlow-gpu==2.5.0
+numpy==1.19.5
+networkx==2.6.3
+einops==0.3.2
