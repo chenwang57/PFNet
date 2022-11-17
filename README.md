@@ -1,5 +1,5 @@
 # PFNet: Large-scale Traffic Forecasting with Progressive Spatio-Temporal Fusion
-===
+***
 This is a TensorFlow implementation of PFNet.
 
 ## Requirements
@@ -16,17 +16,25 @@ The original dataset is under the folder `original_data`, and the pre-processed 
 ## Run
 ***
 ### Train Details
-Before training this model, make sure the two following settings are modified in `run.py`:
+Before training this model, make sure the three following settings are modified in `run.py`:
 
-    MODE = 'train'
+    MODE = 'train'              # train or test
     DATASET = 'LondonHW'        # LondonHW or ManchesterHW
     DURATION = 60
 
-where DURATION is the constant of the forecasting horizon, such as 15, 30, 60. 
-After that, you can run `python run.py` to start training PFNet. The result will generate in experiments folder, including tensorboard-logs folder, best model parameters, the result of prediction, ground truth, and the running log file.
+where DURATION is the constant of the forecasting horizon, such as 15, 30, and 60. 
+After that, you can run `python run.py` to start training PFNet. The result will be generated in the `experiments` folder, including the `tensorboard-logs` folder, best model parameters, the result of prediction, ground truth, and the running log file.
 
 ### Test Details
+Before, testing the PFNet, you should modify the MODE variable as follows:
 
+    MODE = 'test'              # train or test
+
+Besides, go to the bottom of the `run.py` file, and comment out the following code:
+
+    history = trainer.fit()
+    
+After uncommenting the test code `trainer.evaluate(is_pretrained=True, model_path='./experiments/LondonHW_15/2022-05-12-22-33-53/best_model')`, and changing the path of the test model, you can run `run.py` to perform the test operation.
 
 ## Citation
 ***
