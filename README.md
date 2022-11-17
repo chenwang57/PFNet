@@ -22,7 +22,7 @@ Before training this model, make sure the three following settings are modified 
     DATASET = 'LondonHW'        # LondonHW or ManchesterHW
     DURATION = 60
 
-where DURATION is the constant of the forecasting horizon, such as 15, 30, and 60. 
+where `DURATION` is the constant of the forecasting horizon, such as 15, 30, and 60. 
 After that, you can run `python run.py` to start training PFNet. The result will be generated in the `experiments` folder, including the `tensorboard-logs` folder, best model parameters, the result of prediction, ground truth, and the running log file.
 
 ### Test Details
