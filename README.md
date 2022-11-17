@@ -12,3 +12,16 @@ This is a TensorFlow implementation of PFNet.
 ## Data
 ***
 The original dataset is under the folder `original_data`, and the pre-processed dataset is under the folder `input`.
+
+## Run
+***
+### Train
+
+
+### Test
+
+
+## Citation
+***
+Please cite the following paper, if you find the repository or the paper useful.
+  ......
