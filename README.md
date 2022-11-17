@@ -17,8 +17,10 @@ The original dataset is under the folder `original_data`, and the pre-processed 
 ***
 ### Train Details
 Before training this model, make sure the two following settings are modified in `run.py`:
+
     DATASET = 'LondonHW'        # LondonHW or ManchesterHW
     DURATION = 60
+
 where DURATION is the constant of the forecasting horizon, such as 15, 30, 60. 
 
 ### Test Details
