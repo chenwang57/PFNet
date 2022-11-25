@@ -1,0 +1,280 @@
+CUDA: True cuda:0
+folder_dir: astgcn_r_h6d3w3_channel1_1.000000e-03
+params_path: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03
+delete the old one and create params directory experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03
+param list:
+CUDA	 cuda:0
+in_channels	 1
+nb_block	 2
+nb_chev_filter	 64
+nb_time_filter	 64
+time_strides	 6
+batch_size	 16
+graph_signal_matrix_filename	 ./data/LondonHW/LondonHW_15.npz
+start_epoch	 0
+epochs	 100
+ASTGCN_submodule(
+  (BlockList): ModuleList(
+    (0): ASTGCN_block(
+      (TAt): Temporal_Attention_layer()
+      (SAt): Spatial_Attention_layer()
+      (cheb_conv_SAt): cheb_conv_withSAt(
+        (Theta): ParameterList(
+            (0): Parameter containing: [torch.cuda.FloatTensor of size 1x64 (GPU 0)]
+            (1): Parameter containing: [torch.cuda.FloatTensor of size 1x64 (GPU 0)]
+            (2): Parameter containing: [torch.cuda.FloatTensor of size 1x64 (GPU 0)]
+        )
+      )
+      (time_conv): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 6), padding=(0, 1))
+      (residual_conv): Conv2d(1, 64, kernel_size=(1, 1), stride=(1, 6))
+      (ln): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+    )
+    (1): ASTGCN_block(
+      (TAt): Temporal_Attention_layer()
+      (SAt): Spatial_Attention_layer()
+      (cheb_conv_SAt): cheb_conv_withSAt(
+        (Theta): ParameterList(
+            (0): Parameter containing: [torch.cuda.FloatTensor of size 64x64 (GPU 0)]
+            (1): Parameter containing: [torch.cuda.FloatTensor of size 64x64 (GPU 0)]
+            (2): Parameter containing: [torch.cuda.FloatTensor of size 64x64 (GPU 0)]
+        )
+      )
+      (time_conv): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1))
+      (residual_conv): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1))
+      (ln): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (final_conv): Conv2d(2, 1, kernel_size=(1, 64), stride=(1, 1))
+)
+Net's state_dict:
+BlockList.0.TAt.U1	torch.Size([1000])
+BlockList.0.TAt.U2	torch.Size([1, 1000])
+BlockList.0.TAt.U3	torch.Size([1])
+BlockList.0.TAt.be	torch.Size([1, 12, 12])
+BlockList.0.TAt.Ve	torch.Size([12, 12])
+BlockList.0.SAt.W1	torch.Size([12])
+BlockList.0.SAt.W2	torch.Size([1, 12])
+BlockList.0.SAt.W3	torch.Size([1])
+BlockList.0.SAt.bs	torch.Size([1, 1000, 1000])
+BlockList.0.SAt.Vs	torch.Size([1000, 1000])
+BlockList.0.cheb_conv_SAt.Theta.0	torch.Size([1, 64])
+BlockList.0.cheb_conv_SAt.Theta.1	torch.Size([1, 64])
+BlockList.0.cheb_conv_SAt.Theta.2	torch.Size([1, 64])
+BlockList.0.time_conv.weight	torch.Size([64, 64, 1, 3])
+BlockList.0.time_conv.bias	torch.Size([64])
+BlockList.0.residual_conv.weight	torch.Size([64, 1, 1, 1])
+BlockList.0.residual_conv.bias	torch.Size([64])
+BlockList.0.ln.weight	torch.Size([64])
+BlockList.0.ln.bias	torch.Size([64])
+BlockList.1.TAt.U1	torch.Size([1000])
+BlockList.1.TAt.U2	torch.Size([64, 1000])
+BlockList.1.TAt.U3	torch.Size([64])
+BlockList.1.TAt.be	torch.Size([1, 2, 2])
+BlockList.1.TAt.Ve	torch.Size([2, 2])
+BlockList.1.SAt.W1	torch.Size([2])
+BlockList.1.SAt.W2	torch.Size([64, 2])
+BlockList.1.SAt.W3	torch.Size([64])
+BlockList.1.SAt.bs	torch.Size([1, 1000, 1000])
+BlockList.1.SAt.Vs	torch.Size([1000, 1000])
+BlockList.1.cheb_conv_SAt.Theta.0	torch.Size([64, 64])
+BlockList.1.cheb_conv_SAt.Theta.1	torch.Size([64, 64])
+BlockList.1.cheb_conv_SAt.Theta.2	torch.Size([64, 64])
+BlockList.1.time_conv.weight	torch.Size([64, 64, 1, 3])
+BlockList.1.time_conv.bias	torch.Size([64])
+BlockList.1.residual_conv.weight	torch.Size([64, 64, 1, 1])
+BlockList.1.residual_conv.bias	torch.Size([64])
+BlockList.1.ln.weight	torch.Size([64])
+BlockList.1.ln.bias	torch.Size([64])
+final_conv.weight	torch.Size([1, 2, 1, 64])
+final_conv.bias	torch.Size([1])
+Net's total params: 4109437
+Optimizer's state_dict:
+state	{}
+param_groups	[{'lr': 0.001, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0, 'amsgrad': False, 'params': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]}]
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_0.params
+global step: 1000, training loss: 117.63, time: 235.10s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_1.params
+global step: 2000, training loss: 44.20, time: 467.06s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_2.params
+global step: 3000, training loss: 40.60, time: 697.89s
+global step: 4000, training loss: 37.36, time: 911.33s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_3.params
+global step: 5000, training loss: 35.56, time: 1141.46s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_4.params
+global step: 6000, training loss: 35.38, time: 1371.28s
+global step: 7000, training loss: 26.57, time: 1583.64s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_5.params
+global step: 8000, training loss: 30.01, time: 1815.35s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_6.params
+global step: 9000, training loss: 25.54, time: 2050.12s
+global step: 10000, training loss: 25.09, time: 2265.56s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_7.params
+global step: 11000, training loss: 33.12, time: 2501.50s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_8.params
+global step: 12000, training loss: 22.79, time: 2733.80s
+global step: 13000, training loss: 31.43, time: 2948.78s
+global step: 14000, training loss: 27.73, time: 3191.51s
+global step: 15000, training loss: 30.17, time: 3446.00s
+global step: 16000, training loss: 24.29, time: 3700.24s
+global step: 17000, training loss: 30.53, time: 3935.05s
+global step: 18000, training loss: 27.69, time: 4189.21s
+global step: 19000, training loss: 31.63, time: 4443.50s
+global step: 20000, training loss: 27.86, time: 4678.23s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_14.params
+global step: 21000, training loss: 21.88, time: 4932.46s
+global step: 22000, training loss: 26.83, time: 5186.48s
+global step: 23000, training loss: 24.47, time: 5421.20s
+global step: 24000, training loss: 36.94, time: 5675.42s
+global step: 25000, training loss: 47.98, time: 5929.73s
+global step: 26000, training loss: 29.17, time: 6164.50s
+global step: 27000, training loss: 27.17, time: 6396.46s
+global step: 28000, training loss: 30.00, time: 6628.53s
+global step: 29000, training loss: 27.72, time: 6858.98s
+global step: 30000, training loss: 27.66, time: 7070.74s
+global step: 31000, training loss: 22.38, time: 7299.50s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_22.params
+global step: 32000, training loss: 35.04, time: 7527.89s
+global step: 33000, training loss: 23.79, time: 7738.82s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_23.params
+global step: 34000, training loss: 19.11, time: 7967.38s
+global step: 35000, training loss: 29.45, time: 8195.75s
+global step: 36000, training loss: 47.28, time: 8406.67s
+global step: 37000, training loss: 47.33, time: 8635.30s
+global step: 38000, training loss: 23.91, time: 8863.62s
+global step: 39000, training loss: 24.08, time: 9074.37s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_27.params
+global step: 40000, training loss: 28.10, time: 9304.28s
+global step: 41000, training loss: 23.55, time: 9535.60s
+global step: 42000, training loss: 19.53, time: 9764.46s
+global step: 43000, training loss: 25.62, time: 9990.24s
+global step: 44000, training loss: 25.63, time: 10244.63s
+global step: 45000, training loss: 23.82, time: 10499.25s
+global step: 46000, training loss: 26.74, time: 10734.03s
+global step: 47000, training loss: 21.74, time: 10988.62s
+global step: 48000, training loss: 21.98, time: 11243.51s
+global step: 49000, training loss: 24.02, time: 11479.06s
+global step: 50000, training loss: 20.72, time: 11733.92s
+global step: 51000, training loss: 20.62, time: 11989.11s
+global step: 52000, training loss: 17.72, time: 12224.59s
+global step: 53000, training loss: 23.09, time: 12479.36s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_37.params
+global step: 54000, training loss: 22.72, time: 12734.13s
+global step: 55000, training loss: 39.22, time: 12988.99s
+global step: 56000, training loss: 22.63, time: 13224.35s
+global step: 57000, training loss: 25.39, time: 13479.08s
+global step: 58000, training loss: 21.33, time: 13733.91s
+global step: 59000, training loss: 23.38, time: 13969.25s
+global step: 60000, training loss: 22.47, time: 14223.61s
+global step: 61000, training loss: 24.66, time: 14477.78s
+global step: 62000, training loss: 18.69, time: 14712.69s
+global step: 63000, training loss: 17.42, time: 14967.28s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_44.params
+global step: 64000, training loss: 31.24, time: 15222.06s
+global step: 65000, training loss: 26.74, time: 15457.04s
+global step: 66000, training loss: 25.03, time: 15711.12s
+global step: 67000, training loss: 20.71, time: 15965.53s
+global step: 68000, training loss: 19.27, time: 16219.67s
+global step: 69000, training loss: 25.04, time: 16454.93s
+global step: 70000, training loss: 24.89, time: 16709.66s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_49.params
+global step: 71000, training loss: 34.73, time: 16964.54s
+global step: 72000, training loss: 23.82, time: 17199.72s
+global step: 73000, training loss: 18.47, time: 17454.07s
+global step: 74000, training loss: 20.84, time: 17708.53s
+global step: 75000, training loss: 24.25, time: 17943.31s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_52.params
+global step: 76000, training loss: 18.26, time: 18197.88s
+global step: 77000, training loss: 23.03, time: 18452.63s
+global step: 78000, training loss: 26.78, time: 18687.89s
+global step: 79000, training loss: 26.16, time: 18942.65s
+global step: 80000, training loss: 25.37, time: 19197.54s
+global step: 81000, training loss: 21.56, time: 19452.60s
+global step: 82000, training loss: 25.98, time: 19688.04s
+global step: 83000, training loss: 19.01, time: 19943.07s
+global step: 84000, training loss: 26.05, time: 20189.92s
+global step: 85000, training loss: 20.59, time: 20401.98s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_59.params
+global step: 86000, training loss: 22.43, time: 20631.63s
+global step: 87000, training loss: 22.93, time: 20858.56s
+global step: 88000, training loss: 21.72, time: 21067.97s
+global step: 89000, training loss: 20.24, time: 21301.23s
+global step: 90000, training loss: 23.51, time: 21536.12s
+global step: 91000, training loss: 27.32, time: 21756.72s
+global step: 92000, training loss: 21.02, time: 21990.60s
+global step: 93000, training loss: 22.40, time: 22224.10s
+global step: 94000, training loss: 24.16, time: 22460.27s
+global step: 95000, training loss: 18.94, time: 22675.19s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_66.params
+global step: 96000, training loss: 22.75, time: 22903.74s
+global step: 97000, training loss: 21.61, time: 23133.25s
+global step: 98000, training loss: 23.17, time: 23344.66s
+global step: 99000, training loss: 21.17, time: 23573.63s
+global step: 100000, training loss: 24.50, time: 23802.67s
+global step: 101000, training loss: 18.38, time: 24014.55s
+global step: 102000, training loss: 26.84, time: 24244.81s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_71.params
+global step: 103000, training loss: 22.22, time: 24476.80s
+global step: 104000, training loss: 25.17, time: 24691.81s
+global step: 105000, training loss: 22.18, time: 24936.03s
+global step: 106000, training loss: 22.82, time: 25165.63s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_74.params
+global step: 107000, training loss: 27.15, time: 25401.87s
+global step: 108000, training loss: 23.15, time: 25629.70s
+global step: 109000, training loss: 20.05, time: 25872.84s
+global step: 110000, training loss: 24.39, time: 26116.89s
+global step: 111000, training loss: 22.20, time: 26341.99s
+global step: 112000, training loss: 19.35, time: 26573.64s
+global step: 113000, training loss: 18.89, time: 26835.66s
+global step: 114000, training loss: 17.31, time: 27042.94s
+global step: 115000, training loss: 19.52, time: 27268.76s
+global step: 116000, training loss: 23.12, time: 27495.73s
+global step: 117000, training loss: 18.30, time: 27708.04s
+global step: 118000, training loss: 23.24, time: 27933.64s
+global step: 119000, training loss: 23.33, time: 28157.84s
+global step: 120000, training loss: 22.07, time: 28381.37s
+global step: 121000, training loss: 24.72, time: 28590.46s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_84.params
+global step: 122000, training loss: 22.98, time: 28814.70s
+global step: 123000, training loss: 23.73, time: 29040.40s
+global step: 124000, training loss: 20.55, time: 29249.85s
+global step: 125000, training loss: 19.85, time: 29475.85s
+global step: 126000, training loss: 17.10, time: 29701.56s
+global step: 127000, training loss: 21.62, time: 29912.38s
+global step: 128000, training loss: 18.49, time: 30138.72s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_89.params
+global step: 129000, training loss: 22.12, time: 30363.66s
+global step: 130000, training loss: 24.46, time: 30571.32s
+global step: 131000, training loss: 20.69, time: 30796.81s
+global step: 132000, training loss: 26.65, time: 31022.18s
+global step: 133000, training loss: 19.95, time: 31247.35s
+global step: 134000, training loss: 27.79, time: 31455.32s
+global step: 135000, training loss: 18.15, time: 31680.48s
+global step: 136000, training loss: 23.12, time: 31909.04s
+global step: 137000, training loss: 20.44, time: 32113.55s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_95.params
+global step: 138000, training loss: 24.87, time: 32334.45s
+global step: 139000, training loss: 21.55, time: 32556.55s
+global step: 140000, training loss: 22.95, time: 32762.42s
+global step: 141000, training loss: 25.25, time: 32984.56s
+global step: 142000, training loss: 17.70, time: 33207.79s
+global step: 143000, training loss: 24.06, time: 33416.60s
+save parameters to file: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_99.params
+global step: 144000, training loss: 22.23, time: 33646.40s
+best epoch: 99
+load weight from: experiments\LondonHW_15\astgcn_r_h6d3w3_channel1_1.000000e-03\epoch_99.params
+predicting data set batch 1 / 413
+predicting data set batch 101 / 413
+predicting data set batch 201 / 413
+predicting data set batch 301 / 413
+predicting data set batch 401 / 413
+input: (6605, 1000, 1, 12)
+prediction: (6605, 1000, 1)
+data_target_tensor: (6605, 1000, 1)
+current epoch: 99, predict 0 points
+MAE: 29.87
+RMSE: 56.42
+MAPE: 0.35
+all MAE: 29.87
+all RMSE: 56.42
+all MAPE: 0.35
+[29.866499, 56.422417, 0.34997225, 29.866499, 56.422417, 0.34997225]

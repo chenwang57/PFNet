@@ -1,0 +1,65 @@
+K=8, L=1, P=12, Q=1, SE_file='data/SE2.txt', batch_size=2, d=8, decay_epoch=5, learning_rate=0.001, log_file='data/log(ManchesterHW)_30', max_epoch=1000, model_file='data/GMAN(ManchesterHW)_30', patience=10, test_ratio=0.2, time_slot=30, traffic_file='data/ManchesterHW_30.h5', train_ratio=0.7, val_ratio=0.1
+loading data...
+trainX: (12252, 12, 1000)	trainY: (12252, 1, 1000)
+valX:   (1740, 12, 1000)		valY:   (1740, 1, 1000)
+testX:  (3492, 12, 1000)		testY:  (3492, 1, 1000)
+data loaded!
+compiling model...
+trainable parameters: 214,209
+model compiled!
+**** training model ****
+2022-04-05 17:04:33 | epoch: 0001/1000, training time: 832.1s, inference time: 33.9s
+train loss: 129.7107, val_loss: 107.8116
+val loss decrease from inf to 107.8116, saving model to data/GMAN(ManchesterHW)_30
+2022-04-05 17:18:57 | epoch: 0002/1000, training time: 825.7s, inference time: 33.4s
+train loss: 86.6886, val_loss: 133.2905
+2022-04-05 17:33:11 | epoch: 0003/1000, training time: 820.8s, inference time: 32.9s
+train loss: 75.1930, val_loss: 96.2886
+val loss decrease from 107.8116 to 96.2886, saving model to data/GMAN(ManchesterHW)_30
+2022-04-05 17:47:24 | epoch: 0004/1000, training time: 815.4s, inference time: 32.9s
+train loss: 69.9439, val_loss: 110.2754
+2022-04-05 18:01:33 | epoch: 0005/1000, training time: 815.5s, inference time: 32.9s
+train loss: 65.8349, val_loss: 84.4604
+val loss decrease from 96.2886 to 84.4604, saving model to data/GMAN(ManchesterHW)_30
+2022-04-05 18:15:46 | epoch: 0006/1000, training time: 815.3s, inference time: 32.9s
+train loss: 60.5821, val_loss: 75.2291
+val loss decrease from 84.4604 to 75.2291, saving model to data/GMAN(ManchesterHW)_30
+2022-04-05 18:29:59 | epoch: 0007/1000, training time: 815.2s, inference time: 32.9s
+train loss: 58.7416, val_loss: 93.2008
+2022-04-05 18:44:07 | epoch: 0008/1000, training time: 815.4s, inference time: 32.9s
+train loss: 57.1932, val_loss: 69.2683
+val loss decrease from 75.2291 to 69.2683, saving model to data/GMAN(ManchesterHW)_30
+2022-04-05 18:58:20 | epoch: 0009/1000, training time: 815.6s, inference time: 32.9s
+train loss: 56.0284, val_loss: 88.2205
+2022-04-05 19:12:29 | epoch: 0010/1000, training time: 815.3s, inference time: 32.9s
+train loss: 55.1362, val_loss: 80.7136
+2022-04-05 19:26:37 | epoch: 0011/1000, training time: 815.3s, inference time: 32.9s
+train loss: 52.5088, val_loss: 75.8107
+2022-04-05 19:40:46 | epoch: 0012/1000, training time: 815.2s, inference time: 32.9s
+train loss: 51.9064, val_loss: 75.9052
+2022-04-05 19:54:54 | epoch: 0013/1000, training time: 815.3s, inference time: 32.9s
+train loss: 51.3845, val_loss: 78.2741
+2022-04-05 20:09:03 | epoch: 0014/1000, training time: 815.3s, inference time: 32.9s
+train loss: 51.0445, val_loss: 76.2390
+2022-04-05 20:23:11 | epoch: 0015/1000, training time: 815.1s, inference time: 32.9s
+train loss: 50.7750, val_loss: 75.3283
+2022-04-05 20:37:19 | epoch: 0016/1000, training time: 815.0s, inference time: 32.9s
+train loss: 49.1936, val_loss: 71.0052
+2022-04-05 20:51:27 | epoch: 0017/1000, training time: 815.3s, inference time: 32.9s
+train loss: 48.8408, val_loss: 73.1024
+2022-04-05 21:05:36 | epoch: 0018/1000, training time: 815.5s, inference time: 32.9s
+train loss: 48.7348, val_loss: 73.2978
+early stop at epoch: 0018
+**** testing model ****
+loading model from data/GMAN(ManchesterHW)_30
+model restored!
+evaluating...
+testing time: 65.9s
+                MAE		RMSE		MAPE
+train            67.88		106.47		40.39%
+val              69.27		108.64		41.64%
+test             68.41		107.47		43.36%
+performance in each prediction step
+step: 01         68.41		107.47		43.36%
+average:         68.41		107.47		43.36%
+total time: 261.2min

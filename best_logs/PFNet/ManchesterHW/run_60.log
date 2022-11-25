@@ -1,0 +1,27 @@
+The best model and running log will save in ./experiments\ManchesterHW_60\2022-09-22-10-13-09.
+============================================================================
+The setting of dataset(name: ManchesterHW, duration: 60):
+x_train: month-segment (5440, 1000, 6), week-segment (5440, 1000, 6), current-segment (5440, 1000, 6)
+y_train: (5440, 1000, 1)
+x_val: month-segment (864, 1000, 6), week-segment (864, 1000, 6), current-segment (864, 1000, 6)
+y_val: (864, 1000, 1)
+x_test: month-segment (1744, 1000, 6), week-segment (1744, 1000, 6), current-segment (1744, 1000, 6)
+y_test: (1744, 1000, 1)
+The number of train records is 5440.
+The number of val records is 864.
+The number of test records is 1744.
+============================================================================
+============================================================================
+Model settings:
+batch_size=16, cp_cross_attention_depth=2, cp_depth=1, cp_left_depth=1, cp_right_depth=2, cuda=True, dataset='ManchesterHW', debug=True, decay_rate=0.5, device=0, duration=60, early_stop_patience=15, embedding_dropout=0.06, embedding_size=128, epochs=400, heads=3, is_limit=True, learning_rate=0.002, lr_boundaries=[20, 50, 80, 110, 140], memory_limit=6500, mode='train', model_root_path='./experiments', num_for_predict=1, pattern_length=6, pool='tf', progressive_depth=4, save_model=True, scale_dim=2, sensor_size=1000, shuffle=True, spatial_embedding_path='./input/spatial_embedding_ManchesterHW.npy', temporal_dropout=0.06, wm_cross_attention_depth=2, wm_depth=1, wm_left_depth=1, wm_right_depth=2
+============================================================================
+Finish training!
+Load the best model.
+Load pretrained model parameters from "./experiments\ManchesterHW_60\2022-09-22-10-13-09\best_model".
+Start evaluating!
+============================================================================
+Finish evaluating, the performance is shown below:
+MAE Loss: 70.07906341552734.
+RMSE Loss: 128.8439178466797.
+SMAPE Loss: 11.631445586681366.
+============================================================================

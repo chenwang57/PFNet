@@ -1,0 +1,27 @@
+The best model and running log will save in ./experiments\ManchesterHW_30\2022-06-24-09-31-52.
+============================================================================
+The setting of dataset(name: ManchesterHW, duration: 30):
+x_train: month-segment (10912, 1000, 6), week-segment (10912, 1000, 6), current-segment (10912, 1000, 6)
+y_train: (10912, 1000, 1)
+x_val: month-segment (1744, 1000, 6), week-segment (1744, 1000, 6), current-segment (1744, 1000, 6)
+y_val: (1744, 1000, 1)
+x_test: month-segment (3504, 1000, 6), week-segment (3504, 1000, 6), current-segment (3504, 1000, 6)
+y_test: (3504, 1000, 1)
+The number of train records is 10912.
+The number of val records is 1744.
+The number of test records is 3504.
+============================================================================
+============================================================================
+Model settings:
+batch_size=16, cp_cross_attention_depth=2, cp_depth=1, cp_left_depth=1, cp_right_depth=2, cuda=True, dataset='ManchesterHW', debug=True, decay_rate=0.5, device=0, duration=30, early_stop_patience=15, embedding_dropout=0.06, embedding_size=128, epochs=200, heads=3, is_limit=True, learning_rate=0.002, lr_boundaries=[10, 30, 60, 90, 120], memory_limit=6500, mode='train', model_root_path='./experiments', num_for_predict=1, pattern_length=6, pool='tf', progressive_depth=4, save_model=True, scale_dim=4, sensor_size=1000, shuffle=True, spatial_embedding_path='./input/spatial_embedding_ManchesterHW.npy', temporal_dropout=0.06, wm_cross_attention_depth=2, wm_depth=1, wm_left_depth=1, wm_right_depth=2
+============================================================================
+Finish training!
+Load the best model.
+Load pretrained model parameters from "./experiments\ManchesterHW_30\2022-06-24-09-31-52\best_model".
+Start evaluating!
+============================================================================
+Finish evaluating, the performance is shown below:
+MAE Loss: 32.34529113769531.
+RMSE Loss: 57.64925765991211.
+SMAPE Loss: 11.333751678466797.
+============================================================================

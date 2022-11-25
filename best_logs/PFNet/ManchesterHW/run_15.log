@@ -1,0 +1,27 @@
+The best model and running log will save in ./experiments\ManchesterHW_15\2022-09-17-08-07-34.
+============================================================================
+The setting of dataset(name: ManchesterHW, duration: 15):
+x_train: month-segment (21824, 1000, 6), week-segment (21824, 1000, 6), current-segment (21824, 1000, 6)
+y_train: (21824, 1000, 1)
+x_val: month-segment (3504, 1000, 6), week-segment (3504, 1000, 6), current-segment (3504, 1000, 6)
+y_val: (3504, 1000, 1)
+x_test: month-segment (7008, 1000, 6), week-segment (7008, 1000, 6), current-segment (7008, 1000, 6)
+y_test: (7008, 1000, 1)
+The number of train records is 21824.
+The number of val records is 3504.
+The number of test records is 7008.
+============================================================================
+============================================================================
+Model settings:
+batch_size=16, cp_cross_attention_depth=2, cp_depth=1, cp_left_depth=1, cp_right_depth=2, cuda=True, dataset='ManchesterHW', debug=True, decay_rate=0.5, device=0, duration=15, early_stop_patience=15, embedding_dropout=0.06, embedding_size=128, epochs=100, heads=3, is_limit=True, learning_rate=0.002, lr_boundaries=[5, 20, 40, 60, 80], memory_limit=6500, mode='train', model_root_path='./experiments', num_for_predict=1, pattern_length=6, pool='tf', progressive_depth=4, save_model=True, scale_dim=4, sensor_size=1000, shuffle=True, spatial_embedding_path='./input/spatial_embedding_ManchesterHW.npy', temporal_dropout=0.06, wm_cross_attention_depth=2, wm_depth=1, wm_left_depth=1, wm_right_depth=2
+============================================================================
+Finish training!
+Load the best model.
+Load pretrained model parameters from "./experiments\ManchesterHW_15\2022-09-17-08-07-34\best_model".
+Start evaluating!
+============================================================================
+Finish evaluating, the performance is shown below:
+MAE Loss: 16.969364166259766.
+RMSE Loss: 29.46259880065918.
+SMAPE Loss: 12.472087889909744.
+============================================================================
