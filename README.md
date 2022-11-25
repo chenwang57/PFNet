@@ -28,7 +28,7 @@ After that, you can run `python run.py` to start training PFNet. The result will
 
 ### Test Details
 ***
-Before, testing the PFNet, you should modify the `MODE` variable as follows:
+Before testing the PFNet, you should modify the `MODE` variable as follows:
 
     MODE = 'test'              # train or test
 
