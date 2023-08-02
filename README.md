@@ -43,9 +43,9 @@ After uncommenting the test code `trainer.evaluate(is_pretrained=True, model_pat
 Please cite the following paper, if you find the repository or the paper useful.
 
     @article{wang2023pfnet,
-    title={PFNet: Large-Scale Traffic Forecasting With Progressive Spatio-Temporal Fusion},
-    author={Wang, Chen and Zuo, Kaizhong and Zhang, Shaokun and Lei, Hanwen and Hu, Peng and Shen, Zhangyi and Wang, Rui and Zhao, Peize},
-    journal={IEEE Transactions on Intelligent Transportation Systems},
-    year={2023},
-    publisher={IEEE}
+        title={PFNet: Large-Scale Traffic Forecasting With Progressive Spatio-Temporal Fusion},
+        author={Wang, Chen and Zuo, Kaizhong and Zhang, Shaokun and Lei, Hanwen and Hu, Peng and Shen, Zhangyi and Wang, Rui and Zhao, Peize},
+        journal={IEEE Transactions on Intelligent Transportation Systems},
+        year={2023},
+        publisher={IEEE}
     }
