@@ -2,7 +2,7 @@
 
 This is a TensorFlow implementation of PFNet.
 
-** Important Notice: Email Update to** chenwang99@buaa.edu.cn
+**Important Notice: Email Update to** chenwang99@buaa.edu.cn
 
 ## Requirements
 
